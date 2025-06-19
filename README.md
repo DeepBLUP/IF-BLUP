@@ -9,17 +9,17 @@ This implementation supports three main models:
 - **GBLUP**: Genomic selection model based on genomic relationship matrix
 - **ssGBLUP**: Single-step genomic selection model, combining pedigree and genomic information
 
-## 特点
+## Features
 
-- **高效内存管理**：通过稀疏矩阵和线性算子技术，避免存储完整矩阵
-- **无需求逆**：创新算法避开了传统方法中的矩阵求逆操作
-- **大规模数据支持**：能够处理数十万个体的大规模数据集
-- **资源监控**：内置资源监控模块，实时跟踪CPU和内存使用情况
-- **诊断功能**：详细的诊断日志，帮助分析和优化计算过程
+- **Efficient memory management**: avoid storing the full matrix through sparse matrix and linear operator technology
+- **No need for inversion**：innovative algorithm avoids the matrix inversion operation in traditional methods
+- **Large-scale data support**：can handle large-scale data sets of hundreds of thousands of bodies
+- **Resource monitoring**：built-in resource monitoring module, real-time tracking of CPU and memory usage
+- **Diagnostic function**：detailed diagnostic log to help analyze and optimize the calculation process
 
-## 环境要求
+## Environment requirements
 
-### 依赖包
+### Dependencies
 
 ```
 numpy>=1.20.0
@@ -31,30 +31,30 @@ psutil>=5.8.0
 tqdm>=4.62.0
 ```
 
-### 安装依赖
+### Installation dependencies
 
 ```bash
 pip install numpy scipy pandas numba pysnptools psutil tqdm
 ```
 
-## 数据要求
+## Data requirements
 
-### 系谱和表型数据
+### Pedigree and phenotypic data
 
-系谱和表型数据应为CSV格式，包含以下列（示例）：
-- 个体ID
-- 父亲ID（0表示未知）
-- 母亲ID（0表示未知）
-- 性别代码
-- 世代
-- 固定效应1
-- 固定效应2
-- 其他固定效应...
-- 表型值
+Pedigree and phenotypic data should be in CSV format with the following columns (example):
+- Individual ID
+- Father ID (0 means unknown)
+- Mother ID (0 means unknown)
+- Gender code
+- Generation
+- Fixed effect 1
+- Fixed effect 2
+- Other fixed effects...
+- Phenotypic values
 
-### 基因型数据
+### Genotypic data
 
-基因型数据应使用标准的二进制PLINK格式（.bed, .bim, .fam文件）。程序会自动读取这些文件构建基因组关系矩阵。
+Genotypic data should use the standard binary PLINK format (.bed, .bim, .fam files). The program will automatically read these files to construct the genomic relationship matrix.
 
 ## Usage
 
